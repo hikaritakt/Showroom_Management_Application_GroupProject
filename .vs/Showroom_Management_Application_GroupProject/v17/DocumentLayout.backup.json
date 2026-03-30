@@ -1,0 +1,120 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\projectPRN\\Showroom_Management_Application_GroupProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\projectPRN\\Showroom_Management_Application_GroupProject\\ShowroomApp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ShowroomApp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\projectPRN\\Showroom_Management_Application_GroupProject\\GUI\\LoginView.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GUI\\LoginView.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\projectPRN\\Showroom_Management_Application_GroupProject\\GUI\\LoginView.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GUI\\LoginView.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\projectPRN\\Showroom_Management_Application_GroupProject\\GUI\\MainView.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GUI\\MainView.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\projectPRN\\Showroom_Management_Application_GroupProject\\Database\\ShowroomDB.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Database\\ShowroomDB.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\projectPRN\\Showroom_Management_Application_GroupProject\\Data\\DBHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Data\\DBHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginView.xaml.cs",
+              "DocumentMoniker": "D:\\projectPRN\\Showroom_Management_Application_GroupProject\\GUI\\LoginView.xaml.cs",
+              "RelativeDocumentMoniker": "GUI\\LoginView.xaml.cs",
+              "ToolTip": "D:\\projectPRN\\Showroom_Management_Application_GroupProject\\GUI\\LoginView.xaml.cs",
+              "RelativeToolTip": "GUI\\LoginView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-30T17:07:32.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginView.xaml",
+              "DocumentMoniker": "D:\\projectPRN\\Showroom_Management_Application_GroupProject\\GUI\\LoginView.xaml",
+              "RelativeDocumentMoniker": "GUI\\LoginView.xaml",
+              "ToolTip": "D:\\projectPRN\\Showroom_Management_Application_GroupProject\\GUI\\LoginView.xaml",
+              "RelativeToolTip": "GUI\\LoginView.xaml",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAEoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-30T17:07:26.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShowroomApp.csproj",
+              "DocumentMoniker": "D:\\projectPRN\\Showroom_Management_Application_GroupProject\\ShowroomApp.csproj",
+              "RelativeDocumentMoniker": "ShowroomApp.csproj",
+              "ToolTip": "D:\\projectPRN\\Showroom_Management_Application_GroupProject\\ShowroomApp.csproj",
+              "RelativeToolTip": "ShowroomApp.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-30T17:04:22.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainView.xaml.cs",
+              "DocumentMoniker": "D:\\projectPRN\\Showroom_Management_Application_GroupProject\\GUI\\MainView.xaml.cs",
+              "RelativeDocumentMoniker": "GUI\\MainView.xaml.cs",
+              "ToolTip": "D:\\projectPRN\\Showroom_Management_Application_GroupProject\\GUI\\MainView.xaml.cs",
+              "RelativeToolTip": "GUI\\MainView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-30T17:03:30.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ShowroomDB.sql",
+              "DocumentMoniker": "D:\\projectPRN\\Showroom_Management_Application_GroupProject\\Database\\ShowroomDB.sql",
+              "RelativeDocumentMoniker": "Database\\ShowroomDB.sql",
+              "ToolTip": "D:\\projectPRN\\Showroom_Management_Application_GroupProject\\Database\\ShowroomDB.sql",
+              "RelativeToolTip": "Database\\ShowroomDB.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-03-30T17:03:08.099Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DBHelper.cs",
+              "DocumentMoniker": "D:\\projectPRN\\Showroom_Management_Application_GroupProject\\Data\\DBHelper.cs",
+              "RelativeDocumentMoniker": "Data\\DBHelper.cs",
+              "ToolTip": "D:\\projectPRN\\Showroom_Management_Application_GroupProject\\Data\\DBHelper.cs",
+              "RelativeToolTip": "Data\\DBHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-30T17:02:52.12Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

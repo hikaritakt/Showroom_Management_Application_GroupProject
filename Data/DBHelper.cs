@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
+using Microsoft.Data.SqlClient;
 
 namespace ShowroomApp.Data
 {
-    internal class DBHelper
+    public class DBHelper
     {
+        private static readonly string ConnectionString = "Data Source=ROG-STRIX;Initial Catalog=ShowroomDB;User Id=sa;Password=245072968;TrustServerCertificate=True;";
+
+        public static SqlConnection GetConnection()
+        {
+            return new SqlConnection(ConnectionString);
+        }
     }
 }

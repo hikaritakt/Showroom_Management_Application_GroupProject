@@ -1,24 +1,47 @@
-﻿using System.Text;
+using ShowroomApp.Services;
+using ShowroomApp.Shared;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace ShowroomApp
+namespace ShowroomApp.GUI
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainView : Window
     {
-        public MainWindow()
+        private readonly AccountService _accountService;
+
+        public MainView()
         {
             InitializeComponent();
+            _accountService = new AccountService();
+            LoadUserContext();
+        }
+
+        private void LoadUserContext()
+        {
+            txtWelcome.Text = $"Welcome, {CurrentUser.Username}\nRole: {CurrentUser.Role}";
+            
+            // Only Admin can manage employees
+            if (CurrentUser.Role != "Admin")
+            {
+                btnEmployee.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void BtnEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new EmployeeView());
+        }
+
+        private void BtnSupplier_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new SupplierView());
+        }
+
+        private void BtnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            _accountService.Logout();
+            LoginView loginView = new LoginView();
+            loginView.Show();
+            this.Close();
         }
     }
 }
