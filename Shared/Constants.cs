@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShowroomApp.Shared
 {
-    internal class Constants
+    internal static class Constants
     {
+        public const string ConnectionString =
+            "Server=TAKT;Database=ShowroomDB;Username=sa;Password=123;Trusted_Connection=True;TrustServerCertificate=True;";
     }
 }
