@@ -1,89 +1,76 @@
 ﻿using Microsoft.EntityFrameworkCore;
-                    .OnDelete(DeleteBehavior.Restrict);
+using ShowroomApp.Models;
+
+namespace ShowroomApp.Data
+{
+    internal class AppDbContext : DbContext
+    {
+        public DbSet<Brand> Brands => Set<Brand>();
+        public DbSet<Car> Cars => Set<Car>();
+        public DbSet<Customer> Customers => Set<Customer>();
+        public DbSet<Employee> Employees => Set<Employee>();
+        public DbSet<Order> Orders => Set<Order>();
+        public DbSet<OrderDetail> OrderDetails => Set<OrderDetail>();
+
+        public DbSet<CarModel> CarModels => Set<CarModel>();
+        public DbSet<Color> Colors => Set<Color>();
+        public DbSet<CarStatus> CarStatuses => Set<CarStatus>();
+        public DbSet<CarInventoryTransaction> CarInventoryTransactions => Set<CarInventoryTransaction>();
+
+        public DbSet<Accessory> Accessories => Set<Accessory>();
+        public DbSet<AccessoryInventoryTransaction> AccessoryInventoryTransactions => Set<AccessoryInventoryTransaction>();
+        public DbSet<CarAccessory> CarAccessories => Set<CarAccessory>();
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(
+                    "Server=TAKT;Username=sa;Password=123;Database=ShowroomDB;Trusted_Connection=True;TrustServerCertificate=True;");
+            }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Brand>(entity =>
+            {
+                entity.ToTable("Brand");
+                entity.HasKey(x => x.BrandId);
+                entity.Property(x => x.BrandId).HasColumnName("brand_id");
+                entity.Property(x => x.BrandName).HasColumnName("brand_name").HasMaxLength(100).IsRequired();
             });
 
-modelBuilder.Entity<Color>(entity =>
-{
-    entity.ToTable("Color");
-    entity.HasKey(x => x.ColorId);
-    entity.Property(x => x.ColorId).HasColumnName("color_id");
-    entity.Property(x => x.ColorName).HasColumnName("color_name").HasMaxLength(50).IsRequired();
-});
+            modelBuilder.Entity<Car>(entity =>
+            {
+                entity.ToTable("Car");
+                entity.HasKey(x => x.CarId);
+                entity.Property(x => x.CarId).HasColumnName("car_id");
+                entity.Property(x => x.CarName).HasColumnName("car_name").HasMaxLength(100).IsRequired();
+                entity.Property(x => x.Price).HasColumnName("price").HasColumnType("decimal(18,2)");
+                entity.Property(x => x.Quantity).HasColumnName("quantity");
+                entity.Property(x => x.BrandId).HasColumnName("brand_id");
+                entity.Property(x => x.ModelId).HasColumnName("model_id");
+                entity.Property(x => x.ColorId).HasColumnName("color_id");
+                entity.Property(x => x.StatusId).HasColumnName("status_id");
 
-modelBuilder.Entity<CarStatus>(entity =>
-{
-    entity.ToTable("CarStatus");
-    entity.HasKey(x => x.StatusId);
-    entity.Property(x => x.StatusId).HasColumnName("status_id");
-    entity.Property(x => x.StatusName).HasColumnName("status_name").HasMaxLength(50).IsRequired();
-});
+                entity.HasOne(x => x.Brand)
+                    .WithMany(x => x.Cars)
+                    .HasForeignKey(x => x.BrandId)
+                    .OnDelete(DeleteBehavior.Restrict);
 
-modelBuilder.Entity<CarInventoryTransaction>(entity =>
-{
-    entity.ToTable("CarInventoryTransaction");
-    entity.HasKey(x => x.TransactionId);
-    entity.Property(x => x.TransactionId).HasColumnName("transaction_id");
-    entity.Property(x => x.CarId).HasColumnName("car_id");
-    entity.Property(x => x.TransactionType).HasColumnName("transaction_type").HasMaxLength(10).IsRequired();
-    entity.Property(x => x.Quantity).HasColumnName("quantity");
-    entity.Property(x => x.UnitPrice).HasColumnName("unit_price").HasColumnType("decimal(18,2)");
-    entity.Property(x => x.Note).HasColumnName("note").HasMaxLength(255);
-    entity.Property(x => x.TransactionDate).HasColumnName("transaction_date");
+                entity.HasOne(x => x.CarModel)
+                    .WithMany(x => x.Cars)
+                    .HasForeignKey(x => x.ModelId)
+                    .OnDelete(DeleteBehavior.Restrict);
 
-    entity.HasOne(x => x.Car)
-        .WithMany(x => x.CarInventoryTransactions)
-        .HasForeignKey(x => x.CarId)
-        .OnDelete(DeleteBehavior.Restrict);
-});
+                entity.HasOne(x => x.Color)
+                    .WithMany(x => x.Cars)
+                    .HasForeignKey(x => x.ColorId)
+                    .OnDelete(DeleteBehavior.Restrict);
 
-modelBuilder.Entity<Accessory>(entity =>
-{
-    entity.ToTable("Accessory");
-    entity.HasKey(x => x.AccessoryId);
-    entity.Property(x => x.AccessoryId).HasColumnName("accessory_id");
-    entity.Property(x => x.AccessoryName).HasColumnName("accessory_name").HasMaxLength(100).IsRequired();
-    entity.Property(x => x.UnitPrice).HasColumnName("unit_price").HasColumnType("decimal(18,2)");
-    entity.Property(x => x.Quantity).HasColumnName("quantity");
-    entity.Property(x => x.Description).HasColumnName("description").HasMaxLength(255);
-});
-
-modelBuilder.Entity<AccessoryInventoryTransaction>(entity =>
-{
-    entity.ToTable("AccessoryInventoryTransaction");
-    entity.HasKey(x => x.AccessoryTransactionId);
-    entity.Property(x => x.AccessoryTransactionId).HasColumnName("accessory_transaction_id");
-    entity.Property(x => x.AccessoryId).HasColumnName("accessory_id");
-    entity.Property(x => x.TransactionType).HasColumnName("transaction_type").HasMaxLength(10).IsRequired();
-    entity.Property(x => x.Quantity).HasColumnName("quantity");
-    entity.Property(x => x.UnitPrice).HasColumnName("unit_price").HasColumnType("decimal(18,2)");
-    entity.Property(x => x.Note).HasColumnName("note").HasMaxLength(255);
-    entity.Property(x => x.TransactionDate).HasColumnName("transaction_date");
-
-    entity.HasOne(x => x.Accessory)
-        .WithMany(x => x.AccessoryInventoryTransactions)
-        .HasForeignKey(x => x.AccessoryId)
-        .OnDelete(DeleteBehavior.Restrict);
-});
-
-modelBuilder.Entity<CarAccessory>(entity =>
-{
-    entity.ToTable("CarAccessory");
-    entity.HasKey(x => x.CarAccessoryId);
-    entity.Property(x => x.CarAccessoryId).HasColumnName("car_accessory_id");
-    entity.Property(x => x.CarId).HasColumnName("car_id");
-    entity.Property(x => x.AccessoryId).HasColumnName("accessory_id");
-    entity.Property(x => x.Quantity).HasColumnName("quantity");
-
-    entity.HasOne(x => x.Car)
-        .WithMany(x => x.CarAccessories)
-        .HasForeignKey(x => x.CarId)
-        .OnDelete(DeleteBehavior.Cascade);
-
-    entity.HasOne(x => x.Accessory)
-        .WithMany(x => x.CarAccessories)
-        .HasForeignKey(x => x.AccessoryId)
-        .OnDelete(DeleteBehavior.Restrict);
-});
+                entity.HasOne(x => x.Status)
+                    .WithMany(x => x.Cars)
+                    .HasForeignKey(x => x.StatusId)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
         }
-    }
-}
