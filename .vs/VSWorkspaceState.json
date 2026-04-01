@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Data",
+    "\\Database",
+    "\\GUI",
+    "\\Models",
+    "\\Repositories",
+    "\\Services",
+    "\\Shared"
+  ],
+  "SelectedNode": "\\ShowroomApp.csproj",
+  "PreviewInSolutionExplorer": false
+}
